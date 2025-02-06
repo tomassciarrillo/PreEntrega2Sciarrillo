@@ -10,24 +10,11 @@ const ItemListContainer = () => {
 
     const {idCategory} = useParams(); 
 
-    // useEffect( ()=> {
-    //     const productFunction= idCategory ? getProductsByCategory : getProducts;
-    //     productFunction(idCategory)
-    //         .then ( answer => setProducts(answer))
-    // },[idCategory])
-
-    useEffect(() => {
-        console.log("ID de categoría desde useParams:", idCategory); // 👀 Verificar qué devuelve useParams()
-    
-        const productFunction = idCategory ? getProductsByCategory : getProducts;
-    
+    useEffect( ()=> {
+        const productFunction= idCategory ? getProductsByCategory : getProducts;
         productFunction(idCategory)
-            .then(answer => {
-                console.log("Productos obtenidos:", answer); // 👀 Verificar si getProductsByCategory se ejecuta
-                setProducts(answer);
-            });
-    
-    }, [idCategory]);
+            .then ( answer => setProducts(answer))
+    },[idCategory])
 
   return (
     <div className="card-container">

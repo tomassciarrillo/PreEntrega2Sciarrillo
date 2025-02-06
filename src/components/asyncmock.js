@@ -39,24 +39,11 @@ export const getOneProduct = (id) => {
 
 
 
-// export const getProductsByCategory = (idCategory) => {
-//     return new Promise ( resolve => {
-//         setTimeout ( () => {
-//             const productsCategory = productos.filter( item => item.idCat === idCategory);
-//                 resolve (productsCategory);
-//         },100)
-//     })
-// }   
-
-
 export const getProductsByCategory = (idCategory) => {
-    console.log("ID de categoría recibido:", idCategory); // 👀 Verificar qué llega
-
-    return new Promise(resolve => {
-        setTimeout(() => {
-            const productsCategory = productos.filter(item => item.idCat === idCategory);
-            console.log("Productos filtrados:", productsCategory); // 👀 Verificar qué productos está encontrando
-            resolve(productsCategory);
-        }, 100);
-    });
-};
+    return new Promise ( resolve => {
+        setTimeout ( () => {
+            const productsCategory = productos.filter( item => item.idCat === idCategory);
+                resolve (productsCategory);
+        },100)
+    })
+}   
